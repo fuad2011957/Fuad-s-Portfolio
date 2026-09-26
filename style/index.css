@@ -26,6 +26,8 @@ body{
     padding-top: 104px;
 }
 
+
+
 html { scrollbar-width: thin; scrollbar-color: #8b0000 #0a0206; }
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: #0a0206; box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6); }
@@ -722,6 +724,13 @@ body.nav-open .mob-drawer__nav li:nth-child(5) { animation-delay: 0.34s; }
         display: none !important;
     }
 
+
+    .im_fuad{
+        max-width: 100vw;
+        overflow-x: hidden;
+        background-image: url("../public/wall_joker.png");
+    }
+
     .burger {
         display: flex;
     }
@@ -732,7 +741,10 @@ body.nav-open .mob-drawer__nav li:nth-child(5) { animation-delay: 0.34s; }
     }
 
     .im_fuad .container .h1 h1 {
-        font-size: 2.57rem;
+        font-size: clamp(1.65rem, 11vw, 12rem);
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        line-height: 1.15;
     }
 
     .im_fuad .container .h1 p {
@@ -5713,3 +5725,5 @@ a.contact-link:hover .contact-link__arrow{
         transform: none;
     }
 }
+
+

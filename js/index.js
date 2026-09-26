@@ -315,3 +315,24 @@ if (backToTop) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+/* ==========================================
+   PROJECTS FILTER
+   ========================================== */
+const projFilterBtns = document.querySelectorAll('.proj-filter');
+const projCards = document.querySelectorAll('.proj-card');
+
+projFilterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        projFilterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projCards.forEach((card) => {
+            const category = card.dataset.category;
+            const shouldShow = filter === 'all' || category === filter;
+            card.classList.toggle('is-hidden', !shouldShow);
+        });
+    });
+});

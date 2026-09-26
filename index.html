@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function(){
+            try{
+                var t = localStorage.getItem('site-theme');
+                if(t === 'light') document.documentElement.classList.add('light-theme');
+            }catch(e){}
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/lang-switch.css">
+    <link rel="stylesheet" href="style/theme-toggle.css">
     <link rel="icon" href="public/logo-h-no-bg-preview (carve.photos).png">
     <title>Fuad Alizade — Portfolio</title>
 </head>
@@ -22,14 +32,15 @@
             <div class="header-links">
                 <nav class="header-nav">
                     <ul>
-                        <li><a href="#" class="nav-link active">Home</a></li>
-                        <li><a href="#about" class="nav-link">About Me</a></li>
-                        <li><a href="#skills" class="nav-link">Skills</a></li>
-                        <li><a href="#projects" class="nav-link">My project's</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#about" class="nav-link" data-i18n="nav.about">About Me</a></li>
+                        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">My project's</a></li>
+                        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="header-line"></div>
+
                 <div class="header-sosial-media">
                     <a class="social-icon instagram" href="https://www.instagram.com/fuadws_aw/" aria-label="Instagram"></a>
                     <a class="social-icon tiktok" href="https://www.tiktok.com/@fuaddws_ws" aria-label="TikTok"></a>
@@ -54,7 +65,7 @@
             <img src="public/cherep (1).png" alt="Logo" class="mob-drawer__logo">
             <div class="mob-drawer__identity">
                 <span class="mob-drawer__name">FUAD ALIZADE</span>
-                <span class="mob-drawer__role">WEB DEVELOPER</span>
+                <span class="mob-drawer__role" data-i18n="role.webdev">WEB DEVELOPER</span>
             </div>
             <button class="mob-drawer__close" aria-label="Close menu">
                 <span></span><span></span>
@@ -64,13 +75,14 @@
         <!-- Laser separator -->
         <div class="mob-drawer__sep" aria-hidden="true"></div>
 
+
         <!-- Nav links -->
         <ul class="mob-drawer__nav">
-            <li><a href="#" class="mob-nav-link active" data-label="01">Home</a></li>
-            <li><a href="#about" class="mob-nav-link" data-label="02">About Me</a></li>
-            <li><a href="#skills" class="mob-nav-link" data-label="03">Skills</a></li>
-            <li><a href="#projects" class="mob-nav-link" data-label="04">My Projects</a></li>
-            <li><a href="#contact" class="mob-nav-link" data-label="05">Contact</a></li>
+            <li><a href="#" class="mob-nav-link active" data-label="01" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" class="mob-nav-link" data-label="02" data-i18n="nav.about">About Me</a></li>
+            <li><a href="#skills" class="mob-nav-link" data-label="03" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#projects" class="mob-nav-link" data-label="04" data-i18n="nav.projects">My Projects</a></li>
+            <li><a href="#contact" class="mob-nav-link" data-label="05" data-i18n="nav.contact">Contact</a></li>
         </ul>
 
         <!-- Laser separator -->
@@ -78,7 +90,7 @@
 
         <!-- Socials -->
         <div class="mob-drawer__socials">
-            <span class="mob-drawer__socials-label">FOLLOW ME</span>
+            <span class="mob-drawer__socials-label" data-i18n="socials.follow">FOLLOW ME</span>
             <div class="mob-drawer__socials-icons">
                 <a href="https://www.instagram.com/fuadws_aw/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                     <img src="./public/svg/instagram.svg" alt="">
@@ -98,20 +110,20 @@
         <div class="container">
             <span id="available">
                 <span id="red_cir"></span>
-                Available for projects
+                <span data-i18n="hero.badge">Available for projects</span>
             </span>
             <div class="im_fuad_content">
                 <div class="h1">
-                    <p>Hi, I'm <span id="red-text">Fuad</span></p>
-                    <h1>I'M A <span id="red-text" class="a">WEB DEVELOPER</span></h1>
+                    <p><span data-i18n="hero.greeting">Hi, I'm</span> <span id="red-text">Fuad</span></p>
+                    <h1><span data-i18n="hero.role.prefix">I'M A</span> <span id="red-text" class="a" data-i18n="hero.role.title">WEB DEVELOPER</span></h1>
                 </div>
                 <div class="p">
-                    <p>
+                    <p data-i18n="hero.desc">
                         Front-end developer in the making, based in Baku. I turn ideas into working websites — clean code, smooth animations, interfaces people actually enjoy using. Currently diving deeper into AI and design to build more complete projects on my own.
                     </p>
                 </div>
                 <a href="#projects">
-                    <div class="button">VIEW MY PROJECT'S</div>
+                    <div class="button" data-i18n="hero.btn">VIEW MY PROJECT'S</div>
                 </a>
             </div>
         </div>
@@ -128,15 +140,15 @@
             <div class="about__heading about-reveal">
                 <div class="about__chapter" aria-hidden="true">
                     <span>01</span>
-                    <span>ABOUT<br>ME</span>
+                    <span data-i18n-html="about.chapter.title">ABOUT<br>ME</span>
                 </div>
 
                 <div class="about__heading-copy">
-                    <p class="about__eyebrow"><i></i>// BIOGRAPHY</p>
-                    <h2 id="about-title">Design, code <span>& craft.</span></h2>
+                    <p class="about__eyebrow"><i></i><span data-i18n="about.eyebrow">// BIOGRAPHY</span></p>
+                    <h2 id="about-title" data-i18n-html="about.h2">Design, code <span>& craft.</span></h2>
                 </div>
 
-                <p class="about__intro">
+                <p class="about__intro" data-i18n="about.intro">
                     Passionate web developer focused on crafting highly interactive, modern, and visually striking interfaces with performance in mind.
                 </p>
             </div>
@@ -147,7 +159,7 @@
                 <article class="about__profile-card about-reveal" aria-label="Fuad's Profile Card">
                     <div class="about__profile-bar">
                         <span class="about__profile-name"><i></i>FUAD ALIZADE</span>
-                        <span class="about__profile-status"><i></i>ONLINE</span>
+                        <span class="about__profile-status"><i></i><span data-i18n="status.online">ONLINE</span></span>
                     </div>
 
                     <div class="about__profile-body">
@@ -160,8 +172,8 @@
                         </div>
 
                         <div class="about__bio-text">
-                            <h3>Hello, I'm <span>Fuad Alizade</span></h3>
-                            <p>
+                            <h3 data-i18n-html="about.bio.h3">Hello, I'm <span>Fuad Alizade</span></h3>
+                            <p data-i18n="about.bio.p">
                                 I build digital products with clean structure, responsive design, and smooth interactions.
                                 From frontend design systems to dynamic backend features, I focus on turning complex challenges into seamless experiences.
                             </p>
@@ -170,19 +182,19 @@
                                 download="Fuad_Alizade_CV.pdf"
                                 class="about__btn about__btn--primary">
                                     <img src="public/svg/down.svg" alt="">
-                                    <span>Download CV</span>
+                                    <span data-i18n="about.btn.cv">Download CV</span>
                                 </a>
                                 <a href="#projects" class="about__btn about__btn--secondary">
                                     <img src="public/svg/html.svg" alt="">
-                                    <span>View Projects</span>
+                                    <span data-i18n="about.btn.projects">View Projects</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="about__profile-footer">
-                        <span><i></i>BAKU, AZERBAIJAN</span>
-                        <span>FULLSTACK CREATIVE</span>
+                        <span><i></i><span data-i18n="loc.baku">BAKU, AZERBAIJAN</span></span>
+                        <span data-i18n="about.footer.role">FULLSTACK CREATIVE</span>
                     </div>
                 </article>
 
@@ -191,12 +203,12 @@
                     <article class="about-card about-card--projects about-reveal">
                         <div class="about-card__top">
                             <span class="about-card__number">01</span>
-                            <span class="about-card__badge">COMPLETED</span>
+                            <span class="about-card__badge" data-i18n="badge.completed">COMPLETED</span>
                         </div>
                         <div class="about-card__content">
                             <div class="about-card__stat">5+</div>
-                            <h3>TOTAL PROJECTS</h3>
-                            <p>Innovative web solutions crafted with high attention to performance.</p>
+                            <h3 data-i18n="about.card1.title">TOTAL PROJECTS</h3>
+                            <p data-i18n="about.card1.desc">Innovative web solutions crafted with high attention to performance.</p>
                         </div>
                         <div class="about-card__icon">
                             <img src="./public/code.png" alt="Projects Code Icon">
@@ -206,12 +218,12 @@
                     <article class="about-card about-card--certs about-reveal">
                         <div class="about-card__top">
                             <span class="about-card__number">02</span>
-                            <span class="about-card__badge">VERIFIED</span>
+                            <span class="about-card__badge" data-i18n="badge.verified">VERIFIED</span>
                         </div>
                         <div class="about-card__content">
                             <div class="about-card__stat">1+</div>
-                            <h3>CERTIFICATES</h3>
-                            <p>Validated technical skills and specialized training milestones.</p>
+                            <h3 data-i18n="about.card2.title">CERTIFICATES</h3>
+                            <p data-i18n="about.card2.desc">Validated technical skills and specialized training milestones.</p>
                         </div>
                         <div class="about-card__icon">
                             <img src="./public/dsotij.png" alt="Certificate Icon">
@@ -221,12 +233,12 @@
                     <article class="about-card about-card--exp about-reveal">
                         <div class="about-card__top">
                             <span class="about-card__number">03</span>
-                            <span class="about-card__badge">ACTIVE</span>
+                            <span class="about-card__badge" data-i18n="badge.active">ACTIVE</span>
                         </div>
                         <div class="about-card__content">
                             <div class="about-card__stat">2+</div>
-                            <h3>YEARS EXPERIENCE</h3>
-                            <p>Continuous learning journey building real-world applications.</p>
+                            <h3 data-i18n="about.card3.title">YEARS EXPERIENCE</h3>
+                            <p data-i18n="about.card3.desc">Continuous learning journey building real-world applications.</p>
                         </div>
                         <div class="about-card__icon">
                             <img src="./public/global-distribution.png" alt="Experience Icon">
@@ -236,12 +248,12 @@
                     <article class="about-card about-card--focus about-reveal">
                         <div class="about-card__top">
                             <span class="about-card__number">04</span>
-                            <span class="about-card__badge">CORE FOCUS</span>
+                            <span class="about-card__badge" data-i18n="badge.corefocus">CORE FOCUS</span>
                         </div>
                         <div class="about-card__content">
                             <div class="about-card__stat">100%</div>
-                            <h3>UI / UX CRAFT</h3>
-                            <p>Driven by pixel precision, dark aesthetics, and seamless user flow.</p>
+                            <h3 data-i18n="about.card4.title">UI / UX CRAFT</h3>
+                            <p data-i18n="about.card4.desc">Driven by pixel precision, dark aesthetics, and seamless user flow.</p>
                         </div>
                         <span class="about-card__pulse-line" aria-hidden="true"></span>
                     </article>
@@ -251,7 +263,7 @@
             <!-- Closing Bar -->
             <div class="about__closing about-reveal">
                 <span class="about__closing-line" aria-hidden="true"></span>
-                <p>PASSION FOR DETAIL <i>→</i> PERFECT EXECUTION</p>
+                <p><span data-i18n="about.closing.1">PASSION FOR DETAIL</span> <i>→</i> <span data-i18n="about.closing.2">PERFECT EXECUTION</span></p>
                 <span class="about__closing-line" aria-hidden="true"></span>
             </div>
         </div>
@@ -267,15 +279,15 @@
             <div class="skills__heading skills-reveal">
                 <div class="skills__chapter" aria-hidden="true">
                     <span>02</span>
-                    <span>MY<br>SKILLS</span>
+                    <span data-i18n-html="skills.chapter.title">MY<br>SKILLS</span>
                 </div>
 
                 <div class="skills__heading-copy">
-                    <p class="skills__eyebrow"><i></i>// MY ARSENAL</p>
-                    <h2 id="skills-title">Code with a <span>pulse.</span></h2>
+                    <p class="skills__eyebrow"><i></i><span data-i18n="skills.eyebrow">// MY ARSENAL</span></p>
+                    <h2 id="skills-title" data-i18n-html="skills.h2">Code with a <span>pulse.</span></h2>
                 </div>
 
-                <p class="skills__intro">
+                <p class="skills__intro" data-i18n="skills.intro">
                     I blend clean frontend code, sharp visual thinking and AI-powered workflows
                     to turn an idea into an experience people remember.
                 </p>
@@ -285,7 +297,7 @@
                 <article class="skills__reactor skills-reveal" aria-label="Fuad's creative coding core">
                     <div class="skills__reactor-bar">
                         <span class="skills__reactor-name"><i></i>FUAD.DEV</span>
-                        <span class="skills__reactor-status"><i></i>BUILD MODE</span>
+                        <span class="skills__reactor-status"><i></i><span data-i18n="skills.reactor.status">BUILD MODE</span></span>
                     </div>
 
                     <div class="skills__reactor-visual" aria-hidden="true">
@@ -295,19 +307,19 @@
                         <span class="skills__crosshair skills__crosshair--horizontal"></span>
                         <span class="skills__crosshair skills__crosshair--vertical"></span>
                         <div class="skills__core">
-                            <span>CREATIVE</span>
-                            <strong>CORE</strong>
-                            <small>always evolving</small>
+                            <span data-i18n="skills.core.creative">CREATIVE</span>
+                            <strong data-i18n="skills.core.core">CORE</strong>
+                            <small data-i18n="skills.core.small">always evolving</small>
                         </div>
                     </div>
 
                     <div class="skills__reactor-copy">
-                        <p>Making every pixel count.</p>
-                        <span>DESIGN <i>×</i> CODE <i>×</i> CURIOSITY</span>
+                        <p data-i18n="skills.reactor.copy">Making every pixel count.</p>
+                        <span data-i18n="skills.reactor.tags">DESIGN <i>×</i> CODE <i>×</i> CURIOSITY</span>
                     </div>
 
                     <div class="skills__reactor-footer">
-                        <span><i></i>AVAILABLE FOR PROJECTS</span>
+                        <span><i></i><span data-i18n="hero.badge">AVAILABLE FOR PROJECTS</span></span>
                         <span>EST. 2025</span>
                     </div>
                 </article>
@@ -316,13 +328,13 @@
                     <article class="skill-card skill-card--frontend skills-reveal">
                         <div class="skill-card__top">
                             <span class="skill-card__number">01</span>
-                            <span class="skill-card__state"><i></i>CORE</span>
+                            <span class="skill-card__state"><i></i><span data-i18n="badge.core">CORE</span></span>
                         </div>
                         <span class="skill-card__ghost" aria-hidden="true">&lt;/&gt;</span>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">FRONTEND FOUNDATION</p>
-                            <h3>Frontend built<br>to <span>feel alive.</span></h3>
-                            <p class="skill-card__description">Semantic, responsive interfaces with a strong eye for the details.</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.frontend.eyebrow">FRONTEND FOUNDATION</p>
+                            <h3 data-i18n-html="skill.frontend.h3">Frontend built<br>to <span>feel alive.</span></h3>
+                            <p class="skill-card__description" data-i18n="skill.frontend.desc">Semantic, responsive interfaces with a strong eye for the details.</p>
                         </div>
                         <ul class="skill-card__tags" aria-label="Frontend technologies">
                             <li>HTML</li>
@@ -337,9 +349,9 @@
                             <span class="skill-card__mark">{ }</span>
                         </div>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">INTERACTION</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.js.eyebrow">INTERACTION</p>
                             <h3>JavaScript</h3>
-                            <p class="skill-card__description">Adding motion, logic and those little moments that make a site click.</p>
+                            <p class="skill-card__description" data-i18n="skill.js.desc">Adding motion, logic and those little moments that make a site click.</p>
                         </div>
                         <span class="skill-card__pulse-line" aria-hidden="true"></span>
                     </article>
@@ -347,13 +359,13 @@
                     <article class="skill-card skill-card--react skills-reveal">
                         <div class="skill-card__top">
                             <span class="skill-card__number">03</span>
-                            <span class="skill-card__state"><i></i>ACTIVE</span>
+                            <span class="skill-card__state"><i></i><span data-i18n="badge.active">ACTIVE</span></span>
                         </div>
                         <div class="skill-card__atom" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">MODERN STACK</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.react.eyebrow">MODERN STACK</p>
                             <h3>React <span>+</span> Next.js</h3>
-                            <p class="skill-card__description">Component-first web experiences built to scale with the idea.</p>
+                            <p class="skill-card__description" data-i18n="skill.react.desc">Component-first web experiences built to scale with the idea.</p>
                         </div>
                     </article>
 
@@ -364,16 +376,16 @@
                         </div>
                         <div class="skill-card__ai-spark" aria-hidden="true"><i></i><i></i><i></i></div>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">SMART WORKFLOW</p>
-                            <h3>AI tools,<br><span>real taste.</span></h3>
-                            <p class="skill-card__description">Research, ideas and faster prototypes — guided by human judgement.</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.ai.eyebrow">SMART WORKFLOW</p>
+                            <h3 data-i18n-html="skill.ai.h3">AI tools,<br><span>real taste.</span></h3>
+                            <p class="skill-card__description" data-i18n="skill.ai.desc">Research, ideas and faster prototypes — guided by human judgement.</p>
                         </div>
                     </article>
 
                     <article class="skill-card skill-card--python skills-reveal">
                         <div class="skill-card__top">
                             <span class="skill-card__number">05</span>
-                            <span class="skill-card__state skill-card__state--learning"><i></i>GROWING</span>
+                            <span class="skill-card__state skill-card__state--learning"><i></i><span data-i18n="badge.growing">GROWING</span></span>
                         </div>
                         <div class="skill-card__terminal" aria-hidden="true">
                             <span>&gt; learn()</span>
@@ -381,33 +393,33 @@
                             <span>&gt; repeat<span class="skill-card__cursor">_</span></span>
                         </div>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">FOUNDATIONS</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.python.eyebrow">FOUNDATIONS</p>
                             <h3>Python</h3>
-                            <p class="skill-card__description">Exploring scripting and automation one useful project at a time.</p>
+                            <p class="skill-card__description" data-i18n="skill.python.desc">Exploring scripting and automation one useful project at a time.</p>
                         </div>
                     </article>
 
                     <article class="skill-card skill-card--craft skills-reveal">
                         <div class="skill-card__top">
                             <span class="skill-card__number">06</span>
-                            <span class="skill-card__state"><i></i>OBSESSION</span>
+                            <span class="skill-card__state"><i></i><span data-i18n="badge.obsession">OBSESSION</span></span>
                         </div>
                         <span class="skill-card__craft-lines" aria-hidden="true">
                             <span></span><span></span><span></span><span></span><span></span>
                         </span>
                         <div class="skill-card__content">
-                            <p class="skill-card__eyebrow">THE EXTRA EDGE</p>
-                            <h3>UI craft <span>&amp;</span><br>responsive thinking.</h3>
-                            <p class="skill-card__description">Because great work should look intentional on every screen.</p>
+                            <p class="skill-card__eyebrow" data-i18n="skill.craft.eyebrow">THE EXTRA EDGE</p>
+                            <h3 data-i18n-html="skill.craft.h3">UI craft <span>&amp;</span><br>responsive thinking.</h3>
+                            <p class="skill-card__description" data-i18n="skill.craft.desc">Because great work should look intentional on every screen.</p>
                         </div>
-                        <span class="skill-card__signature">DETAILS MATTER</span>
+                        <span class="skill-card__signature" data-i18n="skill.craft.signature">DETAILS MATTER</span>
                     </article>
                 </div>
             </div>
 
             <div class="skills__closing skills-reveal">
                 <span class="skills__closing-line" aria-hidden="true"></span>
-                <p>FROM IDEA <i>→</i> TO INTERFACE</p>
+                <p><span data-i18n="skills.closing.1">FROM IDEA</span> <i>→</i> <span data-i18n="skills.closing.2">TO INTERFACE</span></p>
                 <span class="skills__closing-line" aria-hidden="true"></span>
             </div>
         </div>
@@ -424,25 +436,24 @@
             <div class="projects__heading projects-reveal">
                 <div class="projects__chapter" aria-hidden="true">
                     <span>03</span>
-                    <span>MY<br>WORK</span>
+                    <span data-i18n-html="projects.chapter.title">MY<br>WORK</span>
                 </div>
 
                 <div class="projects__heading-copy">
-                    <p class="projects__eyebrow"><i></i>// SELECTED PROJECTS</p>
-                    <h2 id="projects-title">Built with <span>intent.</span></h2>
+                    <p class="projects__eyebrow"><i></i><span data-i18n="projects.eyebrow">// SELECTED PROJECTS</span></p>
+                    <h2 id="projects-title" data-i18n-html="projects.h2">Built with <span>intent.</span></h2>
                 </div>
 
-                <p class="projects__intro">
+                <p class="projects__intro" data-i18n="projects.intro">
                     Every project is a solution — crafted with clean code, sharp design, and relentless attention to the details that matter.
                 </p>
             </div>
 
             <!-- Filter Bar -->
             <div class="projects__filters projects-reveal" role="group" aria-label="Filter projects">
-                <button class="proj-filter active" data-filter="all">ALL</button>
-                <button class="proj-filter" data-filter="frontend">FRONTEND</button>
-                <button class="proj-filter" data-filter="fullstack">FULLSTACK</button>
-                <button class="proj-filter" data-filter="ui">UI / UX</button>
+                <button class="proj-filter active" data-filter="all" data-i18n="filter.all">ALL</button>
+                <button class="proj-filter" data-filter="frontend" data-i18n="filter.frontend">FRONTEND</button>
+                <button class="proj-filter" data-filter="ui" data-i18n="filter.ui">UI / UX</button>
             </div>
 
             <!-- Cards grid -->
@@ -452,13 +463,13 @@
                 <article class="proj-card proj-card--featured projects-reveal" data-category="fullstack" aria-label="Featured project">
                     <div class="proj-card__label">
                         <span class="proj-card__number">01</span>
-                        <span class="proj-card__badge"><i></i>FEATURED</span>
+                        <span class="proj-card__badge"><i></i><span data-i18n="badge.featured">FEATURED</span></span>
                     </div>
 
                     <div class="proj-card__thumb" aria-hidden="true">
                         <!-- Replace src with your screenshot -->
                         <div class="proj-card__thumb-placeholder">
-                            <span>
+                            <span data-i18n="projects.screenshot">
                                 SCREENSHOT
                             </span>
                         </div>
@@ -470,12 +481,12 @@
                             <span class="proj-card__stack">HTML · CSS · JS</span>
                             <span class="proj-card__year">2025</span>
                         </div>
-                        <h3>NAME</h3>
-                        <p>Short description of what this project does and what problem it solves. Keep it punchy.</p>
+                        <h3 data-i18n="projects.featured.name">NAME</h3>
+                        <p data-i18n="projects.featured.desc">Short description of what this project does and what problem it solves. Keep it punchy.</p>
                         <div class="proj-card__actions">
                             <a href="" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live Demo
+                                <span data-i18n="btn.livedemo">Live Demo</span>
                             </a>
                             <a href="" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -489,7 +500,7 @@
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Project 2">
                     <div class="proj-card__label">
                         <span class="proj-card__number">02</span>
-                        <span class="proj-card__badge proj-card__badge--dim"><i></i>FRONTEND</span>
+                        <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.frontend">FRONTEND</span></span>
                     </div>
                     <div class="proj-card__thumb" aria-hidden="true">
                         <div class="proj-card__thumb-placeholder"><span>
@@ -503,11 +514,11 @@
                             <span class="proj-card__year">2025</span>
                         </div>
                         <h3>StarBucks Coffee</h3>
-                        <p>Short description of this project.</p>
+                        <p data-i18n="projects.card.desc.generic">Short description of this project.</p>
                         <div class="proj-card__actions">
                             <a href="https://star-bucks-coffee.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live
+                                <span data-i18n="btn.live">Live</span>
                             </a>
                             <a href="https://github.com/fuad2011957/StarBucks-Coffee" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -518,10 +529,10 @@
                 </article>
 
                 <!-- ── Regular card 03 ── -->
-                <article class="proj-card projects-reveal" data-category="ui" aria-label="Project 3">
+                <article class="proj-card projects-reveal" data-category="frontend" aria-label="Project 3">
                     <div class="proj-card__label">
                         <span class="proj-card__number">03</span>
-                        <span class="proj-card__badge proj-card__badge--dim"><i></i>UI / UX</span>
+                        <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.ui">UI / UX</span></span>
                     </div>
                     <div class="proj-card__thumb" aria-hidden="true">
                         <div class="proj-card__thumb-placeholder"><span><img src="./public/PFC_IT.png" alt=""></span></div>
@@ -533,11 +544,11 @@
                             <span class="proj-card__year">2025</span>
                         </div>
                         <h3>Place For Code IT</h3>
-                        <p>Short description of this project.</p>
+                        <p data-i18n="projects.card.desc.generic">Short description of this project.</p>
                         <div class="proj-card__actions">
                             <a href="https://place-for-code-it-company.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live
+                                <span data-i18n="btn.live">Live</span>
                             </a>
                             <a href="https://github.com/fuad2011957/Place-For-Code-IT-Company" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -548,13 +559,13 @@
                 </article>
 
                 <!-- ── Regular card 04 ── -->
-                <article class="proj-card projects-reveal" data-category="fullstack" aria-label="Project 4">
+                <article class="proj-card projects-reveal" data-category="ui" aria-label="Project 4">
                     <div class="proj-card__label">
                         <span class="proj-card__number">04</span>
-                        <span class="proj-card__badge proj-card__badge--dim"><i></i>FULLSTACK</span>
+                        <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.ui">FULLSTACK</span></span>
                     </div>
                     <div class="proj-card__thumb" aria-hidden="true">
-                        <div class="proj-card__thumb-placeholder"><span>SCREENSHOT</span></div>
+                        <div class="proj-card__thumb-placeholder"><span data-i18n="projects.screenshot">SCREENSHOT</span></div>
                         <div class="proj-card__scan"></div>
                     </div>
                     <div class="proj-card__body">
@@ -562,12 +573,12 @@
                             <span class="proj-card__stack">React · Node</span>
                             <span class="proj-card__year">2025</span>
                         </div>
-                        <h3>Project Name</h3>
-                        <p>Short description of this project.</p>
+                        <h3 data-i18n="projects.card.name.generic">Project Name</h3>
+                        <p data-i18n="projects.card.desc.generic">Short description of this project.</p>
                         <div class="proj-card__actions">
                             <a href="#" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live
+                                <span data-i18n="btn.live">Live</span>
                             </a>
                             <a href="#" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -581,10 +592,10 @@
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Project 5">
                     <div class="proj-card__label">
                         <span class="proj-card__number">05</span>
-                        <span class="proj-card__badge proj-card__badge--dim"><i></i>FRONTEND</span>
+                        <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.frontend">FRONTEND</span></span>
                     </div>
                     <div class="proj-card__thumb" aria-hidden="true">
-                        <div class="proj-card__thumb-placeholder"><span>SCREENSHOT</span></div>
+                        <div class="proj-card__thumb-placeholder"><span data-i18n="projects.screenshot">SCREENSHOT</span></div>
                         <div class="proj-card__scan"></div>
                     </div>
                     <div class="proj-card__body">
@@ -592,12 +603,12 @@
                             <span class="proj-card__stack">HTML · CSS · JS</span>
                             <span class="proj-card__year">2025</span>
                         </div>
-                        <h3>Project Name</h3>
-                        <p>Short description of this project.</p>
+                        <h3 data-i18n="projects.card.name.generic">Project Name</h3>
+                        <p data-i18n="projects.card.desc.generic">Short description of this project.</p>
                         <div class="proj-card__actions">
                             <a href="#" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live
+                                <span data-i18n="btn.live">Live</span>
                             </a>
                             <a href="#" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -607,12 +618,105 @@
                     </div>
                 </article>
 
+                            <!-- ── Проект 06 ── -->
+            <!-- CATEGORY: frontend — поменяй на "ui", если захочешь перекинуть в UI/UX -->
+            <article class="proj-card projects-reveal" data-category="frontend" aria-label="Project 6">
+                <div class="proj-card__label">
+                    <span class="proj-card__number">06</span>
+                    <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.frontend">FRONTEND</span></span>
+                </div>
+                <div class="proj-card__thumb" aria-hidden="true">
+                    <div class="proj-card__thumb-placeholder"><span data-i18n="projects.screenshot">SCREENSHOT</span></div>
+                    <div class="proj-card__scan"></div>
+                </div>
+                <div class="proj-card__body">
+                    <div class="proj-card__meta">
+                        <span class="proj-card__stack">HTML · CSS · JS</span>
+                        <span class="proj-card__year">2026</span>
+                    </div>
+                    <h3>Landing Page Concept</h3>
+                    <p>Небольшой одностраничный лендинг с анимациями и адаптивной вёрсткой.</p>
+                    <div class="proj-card__actions">
+                        <a href="#" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <span data-i18n="btn.live">Live</span>
+                        </a>
+                        <a href="#" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Проект 07 ── -->
+            <!-- CATEGORY: ui — поменяй на "frontend", если захочешь перекинуть -->
+            <article class="proj-card projects-reveal" data-category="ui" aria-label="Project 7">
+                <div class="proj-card__label">
+                    <span class="proj-card__number">07</span>
+                    <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.ui">UI / UX</span></span>
+                </div>
+                <div class="proj-card__thumb" aria-hidden="true">
+                    <div class="proj-card__thumb-placeholder"><span data-i18n="projects.screenshot">SCREENSHOT</span></div>
+                    <div class="proj-card__scan"></div>
+                </div>
+                <div class="proj-card__body">
+                    <div class="proj-card__meta">
+                        <span class="proj-card__stack">Figma → HTML</span>
+                        <span class="proj-card__year">2026</span>
+                    </div>
+                    <h3>Mobile App UI Kit</h3>
+                    <p>Дизайн-концепт интерфейса мобильного приложения, свёрстанный в код.</p>
+                    <div class="proj-card__actions">
+                        <a href="#" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <span data-i18n="btn.live">Live</span>
+                        </a>
+                        <a href="#" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Проект 08 ── -->
+            <!-- CATEGORY: frontend — поменяй на "ui", если захочешь перекинуть -->
+            <article class="proj-card projects-reveal" data-category="frontend" aria-label="Project 8">
+                <div class="proj-card__label">
+                    <span class="proj-card__number">08</span>
+                    <span class="proj-card__badge proj-card__badge--dim"><i></i><span data-i18n="filter.frontend">FRONTEND</span></span>
+                </div>
+                <div class="proj-card__thumb" aria-hidden="true">
+                    <div class="proj-card__thumb-placeholder"><span data-i18n="projects.screenshot">SCREENSHOT</span></div>
+                    <div class="proj-card__scan"></div>
+                </div>
+                <div class="proj-card__body">
+                    <div class="proj-card__meta">
+                        <span class="proj-card__stack">HTML · CSS · JS</span>
+                        <span class="proj-card__year">2026</span>
+                    </div>
+                    <h3>Mini Weather Widget</h3>
+                    <p>Компактный виджет погоды с запросом к API и анимированными иконками.</p>
+                    <div class="proj-card__actions">
+                        <a href="#" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <span data-i18n="btn.live">Live</span>
+                        </a>
+                        <a href="#" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             </div><!-- /.projects__bento -->
 
             <!-- Closing bar -->
             <div class="projects__closing projects-reveal">
                 <span class="projects__closing-line" aria-hidden="true"></span>
-                <p>IDEA <i>→</i> DESIGN <i>→</i> CODE <i>→</i> SHIP</p>
+                <p><span data-i18n="word.idea">IDEA</span> <i>→</i> <span data-i18n="word.design">DESIGN</span> <i>→</i> <span data-i18n="word.code">CODE</span> <i>→</i> <span data-i18n="word.ship">SHIP</span></p>
                 <span class="projects__closing-line" aria-hidden="true"></span>
             </div>
 
@@ -630,15 +734,15 @@
             <div class="contact__heading contact-reveal">
                 <div class="contact__chapter" aria-hidden="true">
                     <span>04</span>
-                    <span>GET IN<br>TOUCH</span>
+                    <span data-i18n-html="contact.chapter.title">GET IN<br>TOUCH</span>
                 </div>
     
                 <div class="contact__heading-copy">
-                    <p class="contact__eyebrow"><i></i>// CONTACT</p>
-                    <h2 id="contact-title">Let's build <span>together.</span></h2>
+                    <p class="contact__eyebrow"><i></i><span data-i18n="contact.eyebrow">// CONTACT</span></p>
+                    <h2 id="contact-title" data-i18n-html="contact.h2">Let's build <span>together.</span></h2>
                 </div>
     
-                <p class="contact__intro">
+                <p class="contact__intro" data-i18n="contact.intro">
                     Have an idea, a project or just want to say hi? Send a message and I'll get back to you as soon as possible.
                 </p>
             </div>
@@ -648,8 +752,8 @@
                 <!-- Info panel -->
                 <aside class="contact-card contact-info contact-reveal" aria-label="Contact information">
                     <div class="contact-info__bar">
-                        <span class="contact-info__name"><i></i>CHANNEL</span>
-                        <span class="contact-info__status"><i></i>OPEN FOR WORK</span>
+                        <span class="contact-info__name"><i></i><span data-i18n="contact.channel">CHANNEL</span></span>
+                        <span class="contact-info__status"><i></i><span data-i18n="contact.openforwork">OPEN FOR WORK</span></span>
                     </div>
     
                     <div class="contact-radar" aria-hidden="true">
@@ -660,8 +764,8 @@
                         <span class="contact-radar__dot contact-radar__dot--one"></span>
                         <span class="contact-radar__dot contact-radar__dot--two"></span>
                         <div class="contact-radar__core">
-                            <span>SAY</span>
-                            <strong>HI</strong>
+                            <span data-i18n="contact.radar.say">SAY</span>
+                            <strong data-i18n="contact.radar.hi">HI</strong>
                         </div>
                     </div>
     
@@ -672,7 +776,7 @@
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                                 </span>
                                 <span class="contact-link__text">
-                                    <small>EMAIL</small>
+                                    <small data-i18n="contact.label.email">EMAIL</small>
                                     <b>fuadalizade626@gmail.com</b>
                                 </span>
                                 <span class="contact-link__arrow">→</span>
@@ -684,7 +788,7 @@
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
                                 </span>
                                 <span class="contact-link__text">
-                                    <small>TELEGRAM</small>
+                                    <small data-i18n="contact.label.telegram">TELEGRAM</small>
                                     <b>@wyrx1no</b>
                                 </span>
                                 <span class="contact-link__arrow">→</span>
@@ -696,7 +800,7 @@
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
                                 </span>
                                 <span class="contact-link__text">
-                                    <small>GITHUB</small>
+                                    <small data-i18n="contact.label.github">GITHUB</small>
                                     <b>github.com/fuad2011957</b>
                                 </span>
                                 <span class="contact-link__arrow">→</span>
@@ -708,38 +812,38 @@
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
                                 </span>
                                 <span class="contact-link__text">
-                                    <small>LOCATION</small>
-                                    <b>Baku, Azerbaijan</b>
+                                    <small data-i18n="contact.label.location">LOCATION</small>
+                                    <b data-i18n="loc.baku">Baku, Azerbaijan</b>
                                 </span>
                             </div>
                         </li>
                     </ul>
     
                     <div class="contact-info__footer">
-                        <span><i></i>AVG. REPLY TIME</span>
-                        <span>&lt; 24 HRS</span>
+                        <span><i></i><span data-i18n="contact.replytime">AVG. REPLY TIME</span></span>
+                        <span data-i18n="contact.replytime.value">&lt; 24 HRS</span>
                     </div>
                 </aside>
     
                 <!-- Form -->
                 <div class="contact-card contact-card--form contact-reveal">
                     <div class="contact-form__top">
-                        <span class="contact-form__number">// NEW MESSAGE</span>
-                        <span class="contact-form__state"><i></i>SECURE</span>
+                        <span class="contact-form__number" data-i18n="contact.form.newmsg">// NEW MESSAGE</span>
+                        <span class="contact-form__state"><i></i><span data-i18n="contact.form.secure">SECURE</span></span>
                     </div>
     
                     <form id="contactForm" class="contact-form" novalidate>
                         <div class="contact-form__row">
                             <div class="field">
                                 <input type="text" id="cf-name" name="name" placeholder=" " autocomplete="name" required>
-                                <label for="cf-name">YOUR NAME</label>
+                                <label for="cf-name" data-i18n="contact.form.name">YOUR NAME</label>
                                 <span class="field__line"></span>
                                 <span class="field__error" role="alert"></span>
                             </div>
     
                             <div class="field">
                                 <input type="email" id="cf-email" name="email" placeholder=" " autocomplete="email" required>
-                                <label for="cf-email">YOUR EMAIL</label>
+                                <label for="cf-email" data-i18n="contact.form.email">YOUR EMAIL</label>
                                 <span class="field__line"></span>
                                 <span class="field__error" role="alert"></span>
                             </div>
@@ -747,14 +851,14 @@
     
                         <div class="field">
                             <input type="text" id="cf-subject" name="subject" placeholder=" ">
-                            <label for="cf-subject">SUBJECT (OPTIONAL)</label>
+                            <label for="cf-subject" data-i18n="contact.form.subject">SUBJECT (OPTIONAL)</label>
                             <span class="field__line"></span>
                             <span class="field__error" role="alert"></span>
                         </div>
     
                         <div class="field">
                             <textarea id="cf-message" name="message" placeholder=" " maxlength="600" required></textarea>
-                            <label for="cf-message">YOUR MESSAGE</label>
+                            <label for="cf-message" data-i18n="contact.form.message">YOUR MESSAGE</label>
                             <span class="field__line"></span>
                             <span class="field__error" role="alert"></span>
                         </div>
@@ -768,7 +872,7 @@
                             <span class="contact-form__counter"><b id="contactCounter">0</b> / 600</span>
     
                             <button type="submit" class="contact-form__submit">
-                                <span class="contact-form__label">SEND MESSAGE</span>
+                                <span class="contact-form__label" data-i18n="contact.form.send">SEND MESSAGE</span>
                                 <svg class="contact-form__plane" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
                                 <span class="contact-form__spinner" aria-hidden="true"></span>
                             </button>
@@ -780,7 +884,7 @@
             <!-- Closing bar -->
             <div class="contact__closing contact-reveal">
                 <span class="contact__closing-line" aria-hidden="true"></span>
-                <p>IDEA <i>→</i> MESSAGE <i>→</i> REPLY <i>→</i> SHIP</p>
+                <p><span data-i18n="word.idea">IDEA</span> <i>→</i> <span data-i18n="word.message">MESSAGE</span> <i>→</i> <span data-i18n="word.reply">REPLY</span> <i>→</i> <span data-i18n="word.ship">SHIP</span></p>
                 <span class="contact__closing-line" aria-hidden="true"></span>
             </div>
         </div>
@@ -805,13 +909,13 @@
                 </svg>
             </div>
     
-            <p class="contact-modal__eyebrow">// TRANSMISSION COMPLETE</p>
-            <h3 id="contactModalTitle">Message <span>sent!</span></h3>
+            <p class="contact-modal__eyebrow" data-i18n="modal.eyebrow">// TRANSMISSION COMPLETE</p>
+            <h3 id="contactModalTitle" data-i18n-html="modal.title">Message <span>sent!</span></h3>
             <p class="contact-modal__text">
-                Thank you, <b id="contactModalName">friend</b>! Your message was delivered successfully. I'll reply to you very soon.
+                <span data-i18n="modal.thanks">Thank you,</span> <b id="contactModalName">friend</b><span data-i18n="modal.text2">! Your message was delivered successfully. I'll reply to you very soon.</span>
             </p>
     
-            <button type="button" class="contact-modal__btn" id="contactModalClose">GOT IT</button>
+            <button type="button" class="contact-modal__btn" id="contactModalClose" data-i18n="modal.gotit">GOT IT</button>
         </div>
     </div>
 
@@ -820,16 +924,16 @@
         <div class="footer__marquee" aria-hidden="true">
             <div class="footer__track">
                 <div class="footer__group">
-                    <span>AVAILABLE FOR WORK</span><i>✦</i>
-                    <span>CLEAN CODE</span><i>✦</i>
-                    <span>SHARP DESIGN</span><i>✦</i>
-                    <span>LET'S BUILD TOGETHER</span><i>✦</i>
+                    <span data-i18n="footer.marquee1">AVAILABLE FOR WORK</span><i>✦</i>
+                    <span data-i18n="footer.marquee2">CLEAN CODE</span><i>✦</i>
+                    <span data-i18n="footer.marquee3">SHARP DESIGN</span><i>✦</i>
+                    <span data-i18n="footer.marquee4">LET'S BUILD TOGETHER</span><i>✦</i>
                 </div>
                 <div class="footer__group">
-                    <span>AVAILABLE FOR WORK</span><i>✦</i>
-                    <span>CLEAN CODE</span><i>✦</i>
-                    <span>SHARP DESIGN</span><i>✦</i>
-                    <span>LET'S BUILD TOGETHER</span><i>✦</i>
+                    <span data-i18n="footer.marquee1">AVAILABLE FOR WORK</span><i>✦</i>
+                    <span data-i18n="footer.marquee2">CLEAN CODE</span><i>✦</i>
+                    <span data-i18n="footer.marquee3">SHARP DESIGN</span><i>✦</i>
+                    <span data-i18n="footer.marquee4">LET'S BUILD TOGETHER</span><i>✦</i>
                 </div>
             </div>
         </div>
@@ -844,25 +948,25 @@
                 <!-- Brand -->
                 <div class="footer__brand footer-reveal">
                     <a class="footer__logo" href="#" aria-label="Back to top">ALIZADE<span>FUAD</span></a>
-                    <p>Frontend developer crafting fast, clean and memorable interfaces. Every pixel with intent.</p>
-                    <span class="footer__status"><i></i>OPEN FOR FREELANCE</span>
+                    <p data-i18n="footer.brand.desc">Frontend developer crafting fast, clean and memorable interfaces. Every pixel with intent.</p>
+                    <span class="footer__status"><i></i><span data-i18n="footer.status">OPEN FOR FREELANCE</span></span>
                 </div>
     
                 <!-- Navigation -->
                 <nav class="footer__col footer-reveal" aria-label="Footer navigation">
-                    <h4>// NAVIGATION</h4>
+                    <h4 data-i18n="footer.col.nav">// NAVIGATION</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav.about2">About</a></li>
+                        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li><a href="#projects" data-i18n="nav.projects2">Projects</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </nav>
     
                 <!-- Socials -->
                 <div class="footer__col footer-reveal">
-                    <h4>// SOCIALS</h4>
+                    <h4 data-i18n="footer.col.socials">// SOCIALS</h4>
                     <ul>
                         <li><a href="https://github.com/fuad2011957" target="_blank" rel="noopener">GitHub</a></li>
                         <li><a href="https://t.me/wyrx1no" target="_blank" rel="noopener">Telegram</a></li>
@@ -873,8 +977,8 @@
     
                 <!-- CTA -->
                 <div class="footer__col footer__cta footer-reveal">
-                    <h4>// LET'S TALK</h4>
-                    <p>Have a project in mind? Let's make it real.</p>
+                    <h4 data-i18n="footer.col.talk">// LET'S TALK</h4>
+                    <p data-i18n="footer.talk.desc">Have a project in mind? Let's make it real.</p>
                     <a class="footer__mail" href="mailto:fuadalizade626@gmail.com">
                         <span>fuadalizade626@gmail.com</span>
                         <b>→</b>
@@ -887,17 +991,34 @@
     
             <!-- Bottom bar -->
             <div class="footer__bottom footer-reveal">
-                <p class="footer__copy">© <span id="footerYear">2026</span> YOUR NAME. ALL RIGHTS RESERVED.</p>
-                <p class="footer__made">DESIGNED &amp; CODED WITH <i>♥</i></p>
+                <p class="footer__copy"><span data-i18n="footer.copy">©</span> <span id="footerYear">2026</span> FUAD ALIZADE. <span data-i18n="footer.rights">ALL RIGHTS RESERVED.</span></p>
+                <p class="footer__made"><span data-i18n="footer.made">DESIGNED &amp; CODED WITH</span> <i>♥</i></p>
+
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
+                    <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </span>
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb"></span>
+                    </span>
+                    <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                        
+                    </span>
+                </button>
+
                 <button type="button" class="footer__top" id="backToTop" aria-label="Back to top">
-                    <span>TOP</span>
+                    <span data-i18n="footer.top">TOP</span>
                     <b>↑</b>
+                    
                 </button>
             </div>
         </div>
     </footer>
 
+    <script src="script/i18n.js"></script>
     <script src="js/index.js"></script>
     <script src="script/cursor.js"></script>
+    <script src="script/theme.js"></script>
 </body>
 </html>
