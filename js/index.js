@@ -3,53 +3,31 @@ const navLinks = document.querySelectorAll('.header-nav .nav-link');
 const heroSection = document.querySelector('.im_fuad');
 const sections = document.querySelectorAll('section[id]');
 
-
 const SCROLL_THRESHOLD = 60;
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > SCROLL_THRESHOLD) {
-        header.classList.add('is-floating');
-    } else {
-        header.classList.remove('is-floating');
-    }
+    header.classList.toggle('is-floating', window.scrollY > SCROLL_THRESHOLD);
 }, { passive: true });
 
-
-const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -50% 0px',
-    threshold: 0
-};
-
+/* ---------- Active nav link ---------- */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            const currentId = entry.target.getAttribute('id');
-            const isHero = entry.target === heroSection;
+        if (!entry.isIntersecting) return;
+        const currentId = entry.target.getAttribute('id');
+        const isHero = entry.target === heroSection;
 
-            navLinks.forEach((link) => {
-                const href = link.getAttribute('href');
-
-               
-                if (isHero && href === '#') {
-                    link.classList.add('active');
-                } 
-             
-                else if (!isHero && href === `#${currentId}`) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
+        navLinks.forEach((link) => {
+            const href = link.getAttribute('href');
+            const active = isHero ? href === '#' : href === `#${currentId}`;
+            link.classList.toggle('active', active);
+        });
     });
-}, observerOptions);
-
+}, { root: null, rootMargin: '-20% 0px -50% 0px', threshold: 0 });
 
 if (heroSection) observer.observe(heroSection);
 sections.forEach((section) => observer.observe(section));
 
-
+/* ---------- Reveal + mouse glow on cards ---------- */
 const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
     const section = document.querySelector(sectionSelector);
     if (!section) return;
@@ -57,22 +35,17 @@ const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
     const cards = section.querySelectorAll(cardSelector);
     section.classList.add(readyClass);
 
-    const reveal = () => {
-        section.classList.add('is-visible');
-    };
+    const reveal = () => section.classList.add('is-visible');
 
     if ('IntersectionObserver' in window) {
-        const obs = new IntersectionObserver((entries, observerInstance) => {
+        const obs = new IntersectionObserver((entries, instance) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     reveal();
-                    observerInstance.unobserve(entry.target);
+                    instance.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.12
-        });
-
+        }, { threshold: 0.12 });
         obs.observe(section);
     } else {
         reveal();
@@ -83,14 +56,10 @@ const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
     if (hasFinePointer) {
         cards.forEach((card) => {
             card.addEventListener('pointermove', (event) => {
-                const bounds = card.getBoundingClientRect();
-                const pointerX = ((event.clientX - bounds.left) / bounds.width) * 100;
-                const pointerY = ((event.clientY - bounds.top) / bounds.height) * 100;
-
-                card.style.setProperty('--mouse-x', `${pointerX}%`);
-                card.style.setProperty('--mouse-y', `${pointerY}%`);
+                const b = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${((event.clientX - b.left) / b.width) * 100}%`);
+                card.style.setProperty('--mouse-y', `${((event.clientY - b.top) / b.height) * 100}%`);
             });
-
             card.addEventListener('pointerleave', () => {
                 card.style.setProperty('--mouse-x', '50%');
                 card.style.setProperty('--mouse-y', '50%');
@@ -102,14 +71,13 @@ const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
 setupInteractiveSection('.skills', '.skill-card', 'skills--ready');
 setupInteractiveSection('.about', '.about-card, .about__profile-card', 'about--ready');
 
-
 /* ==========================================
    MOBILE BURGER MENU
    ========================================== */
-const burger       = document.querySelector('.burger');
-const mobDrawer    = document.querySelector('.mob-drawer');
-const mobBackdrop  = document.querySelector('.mob-backdrop');
-const mobNavLinks  = document.querySelectorAll('.mob-nav-link');
+const burger      = document.querySelector('.burger');
+const mobDrawer   = document.querySelector('.mob-drawer');
+const mobBackdrop = document.querySelector('.mob-backdrop');
+const mobNavLinks = document.querySelectorAll('.mob-nav-link');
 
 const openMenu = () => {
     document.body.classList.add('nav-open');
@@ -130,19 +98,14 @@ if (burger) {
         document.body.classList.contains('nav-open') ? closeMenu() : openMenu();
     });
 }
-
-if (mobBackdrop) {
-    mobBackdrop.addEventListener('click', closeMenu);
-}
+if (mobBackdrop) mobBackdrop.addEventListener('click', closeMenu);
 
 const mobCloseBtn = document.querySelector('.mob-drawer__close');
-if (mobCloseBtn) {
-    mobCloseBtn.addEventListener('click', closeMenu);
-}
+if (mobCloseBtn) mobCloseBtn.addEventListener('click', closeMenu);
 
-mobNavLinks.forEach(link => {
+mobNavLinks.forEach((link) => {
     link.addEventListener('click', () => {
-        mobNavLinks.forEach(l => l.classList.remove('active'));
+        mobNavLinks.forEach((l) => l.classList.remove('active'));
         link.classList.add('active');
         closeMenu();
     });
@@ -155,7 +118,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
 setupInteractiveSection('.contact', '.contact-card', 'contact--ready');
 
 /* ==========================================
@@ -164,17 +126,22 @@ setupInteractiveSection('.contact', '.contact-card', 'contact--ready');
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    // Чтобы сообщения реально приходили тебе на почту, создай форму на https://formspree.io
-    // и вставь сюда ссылку вида 'https://formspree.io/f/xxxxxxxx'.
-    // Пока пусто, отправка просто имитируется (для теста дизайна).
-    const CONTACT_ENDPOINT = '';
+    /*
+     * ПОЧТА: чтобы сообщения приходили на твою почту:
+     * 1) зайди на https://formspree.io, создай форму (New Form) и укажи свою почту;
+     * 2) подтверди письмо от Formspree;
+     * 3) вставь сюда ссылку вида 'https://formspree.io/f/xxxxxxxx'.
+     * Пока пусто — отправка только имитируется, реальные письма НЕ уходят.
+     */
+    const CONTACT_ENDPOINT = 'https://formspree.io/f/xwlvwpop';
 
-    const modal        = document.getElementById('contactModal');
-    const modalName    = document.getElementById('contactModalName');
-    const modalClose   = document.getElementById('contactModalClose');
-    const submitBtn    = contactForm.querySelector('.contact-form__submit');
-    const statusBox    = document.getElementById('contactStatus');
-    const counter      = document.getElementById('contactCounter');
+    const modal      = document.getElementById('contactModal');
+    const modalName  = document.getElementById('contactModalName');
+    const modalClose = document.getElementById('contactModalClose');
+    const submitBtn  = contactForm.querySelector('.contact-form__submit');
+    const submitLbl  = submitBtn.querySelector('.contact-form__label');
+    const statusBox  = document.getElementById('contactStatus');
+    const counter    = document.getElementById('contactCounter');
 
     const rules = {
         name:    v => v.trim().length >= 2 || 'Please enter your name (min. 2 characters)',
@@ -273,33 +240,35 @@ if (contactForm) {
             return;
         }
 
+        const name = contactForm.elements.name.value.trim();
         const data = {
-            name:    contactForm.elements.name.value.trim(),
+            name,
             email:   contactForm.elements.email.value.trim(),
             subject: contactForm.elements.subject.value.trim(),
-            message: contactForm.elements.message.value.trim()
+            message: contactForm.elements.message.value.trim(),
+            _subject: `Portfolio: new message from ${name}`
         };
 
+        const originalLabel = submitLbl.textContent; // сохраняем текст на текущем языке
         submitBtn.classList.add('is-loading');
         submitBtn.disabled = true;
-        submitBtn.querySelector('.contact-form__label').textContent = 'SENDING...';
+        submitLbl.textContent = '...';
 
         try {
             await sendMessage(data);
             contactForm.reset();
             counter.textContent = '0';
-            openModal(data.name);
+            openModal(name);
         } catch (err) {
             statusBox.textContent = 'Something went wrong. Please try again or write to me by email.';
             statusBox.classList.add('is-visible');
         } finally {
             submitBtn.classList.remove('is-loading');
             submitBtn.disabled = false;
-            submitBtn.querySelector('.contact-form__label').textContent = 'SEND MESSAGE';
+            submitLbl.textContent = originalLabel;
         }
     });
 }
-
 
 setupInteractiveSection('.footer', '.footer__brand', 'footer--ready');
 
@@ -320,7 +289,7 @@ if (backToTop) {
    PROJECTS FILTER
    ========================================== */
 const projFilterBtns = document.querySelectorAll('.proj-filter');
-const projCards = document.querySelectorAll('.proj-card');
+const projCards = document.querySelectorAll('.projects__bento .proj-card');
 
 projFilterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -328,11 +297,8 @@ projFilterBtns.forEach((btn) => {
         btn.classList.add('active');
 
         const filter = btn.dataset.filter;
-
         projCards.forEach((card) => {
-            const category = card.dataset.category;
-            const shouldShow = filter === 'all' || category === filter;
-            card.classList.toggle('is-hidden', !shouldShow);
+            card.classList.toggle('is-hidden', !(filter === 'all' || card.dataset.category === filter));
         });
     });
 });

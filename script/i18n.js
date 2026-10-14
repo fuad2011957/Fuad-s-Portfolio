@@ -11,6 +11,7 @@
       "nav.skills": "Skills",
       "nav.projects": "My project's",
       "nav.projects2": "Projects",
+      "nav.process": "Process",
       "nav.contact": "Contact",
       "role.webdev": "WEB DEVELOPER",
       "socials.follow": "FOLLOW ME",
@@ -114,14 +115,40 @@
       "filter.frontend": "FRONTEND",
       "filter.fullstack": "FULLSTACK",
       "filter.ui": "UI / UX",
-      "projects.screenshot": "SCREENSHOT",
-      "projects.featured.name": "NAME",
-      "projects.featured.desc":
-        "Short description of what this project does and what problem it solves. Keep it punchy.",
-      "projects.card.desc.generic": "Short description of this project.",
-      "projects.card.name.generic": "Project Name",
       "btn.livedemo": "Live Demo",
       "btn.live": "Live",
+
+      "proj.starbucks.desc":
+        "A warm, responsive landing page for a coffee brand with menu highlights, smooth scroll effects and a cozy visual style.",
+      "proj.pfc.desc":
+        "Corporate website for an IT company: services, team and contact flow in a clean, modern layout.",
+      "proj.webdev.desc":
+        "A sleek web development landing page that presents services with a strong call to action.",
+      "proj.nexora1.desc":
+        "Dark, high-contrast website for an independent digital studio, built around bold type and motion.",
+      "proj.nexora2.desc":
+        "A digital agency concept with services, case-style sections and a conversion-focused layout.",
+      "proj.nexora3.desc":
+        "A third take on the Nexora studio brand, with a different layout and animation approach.",
+      "proj.aero.desc":
+        "Futuristic mobile HUD interface concept with sharp UI details and a sci-fi cockpit feel.",
+
+      "process.chapter.title": "MY<br>PROCESS",
+      "process.eyebrow": "// HOW I WORK",
+      "process.h2": "From idea to <span>launch.</span>",
+      "process.intro":
+        "A simple, transparent workflow, so you always know what's happening and what comes next.",
+      "process.s1.title": "Discover",
+      "process.s1.desc":
+        "We talk goals, audience and references. I turn it into a clear plan and structure.",
+      "process.s2.title": "Design",
+      "process.s2.desc":
+        "Layout, colors and typography that fit your brand, before a single line of code.",
+      "process.s3.title": "Build",
+      "process.s3.desc":
+        "Clean, responsive code with smooth animations, tested on real screens and browsers.",
+      "process.s4.title": "Launch",
+      "process.s4.desc": "Deploy, speed checks and handover. And I stay around for tweaks.",
 
       "contact.chapter.title": "GET IN<br>TOUCH",
       "contact.eyebrow": "// CONTACT",
@@ -177,6 +204,7 @@
       "nav.skills": "Навыки",
       "nav.projects": "Мои проекты",
       "nav.projects2": "Проекты",
+      "nav.process": "Процесс",
       "nav.contact": "Контакты",
       "role.webdev": "ВЕБ-РАЗРАБОТЧИК",
       "socials.follow": "ПОДПИШИСЬ",
@@ -196,7 +224,7 @@
       "about.eyebrow": "// БИОГРАФИЯ",
       "about.h2": "Дизайн, код <span>и мастерство.</span>",
       "about.intro":
-        "Увлечённый веб-разработчик, создающий интерактивные, современные и visuально яркие интерфейсы, не забывая о производительности.",
+        "Увлечённый веб-разработчик, создающий интерактивные, современные и визуально яркие интерфейсы, не забывая о производительности.",
       "about.bio.h3": "Привет, я <span>Фуад Ализаде</span>",
       "about.bio.p":
         "Создаю цифровые продукты с чистой структурой, адаптивным дизайном и плавными взаимодействиями. От фронтенд-систем до динамичного бэкенда — превращаю сложные задачи в цельный опыт.",
@@ -279,14 +307,41 @@
       "filter.frontend": "FRONTEND",
       "filter.fullstack": "FULLSTACK",
       "filter.ui": "UI / UX",
-      "projects.screenshot": "СКРИНШОТ",
-      "projects.featured.name": "НАЗВАНИЕ",
-      "projects.featured.desc":
-        "Краткое описание того, что делает проект и какую проблему решает. Коротко и по делу.",
-      "projects.card.desc.generic": "Краткое описание этого проекта.",
-      "projects.card.name.generic": "Название проекта",
       "btn.livedemo": "Демо",
       "btn.live": "Демо",
+
+      "proj.starbucks.desc":
+        "Тёплый адаптивный лендинг кофейного бренда: меню, плавные эффекты скролла и уютный визуальный стиль.",
+      "proj.pfc.desc":
+        "Корпоративный сайт IT-компании: услуги, команда и обратная связь в чистом современном макете.",
+      "proj.webdev.desc":
+        "Стильный лендинг веб-разработки с понятной подачей услуг и сильным призывом к действию.",
+      "proj.nexora1.desc":
+        "Тёмный контрастный сайт независимой цифровой студии с акцентом на крупную типографику и анимацию.",
+      "proj.nexora2.desc":
+        "Концепт сайта digital-агентства: услуги, кейс-блоки и макет, ориентированный на конверсию.",
+      "proj.nexora3.desc":
+        "Третья версия бренда студии Nexora: другая сетка и другой подход к анимациям.",
+      "proj.aero.desc":
+        "Футуристичный концепт мобильного HUD-интерфейса с чёткими деталями и атмосферой кабины пилота.",
+
+      "process.chapter.title": "МОЙ<br>ПРОЦЕСС",
+      "process.eyebrow": "// КАК Я РАБОТАЮ",
+      "process.h2": "От идеи до <span>запуска.</span>",
+      "process.intro":
+        "Простой и прозрачный процесс: вы всегда знаете, что происходит и что дальше.",
+      "process.s1.title": "Знакомство",
+      "process.s1.desc":
+        "Обсуждаем цели, аудиторию и референсы. Превращаю это в понятный план и структуру.",
+      "process.s2.title": "Дизайн",
+      "process.s2.desc":
+        "Макет, цвета и шрифты под ваш бренд ещё до первой строчки кода.",
+      "process.s3.title": "Разработка",
+      "process.s3.desc":
+        "Чистый адаптивный код и плавные анимации, проверенные на реальных экранах и браузерах.",
+      "process.s4.title": "Запуск",
+      "process.s4.desc":
+        "Публикация, проверка скорости и передача проекта. И я остаюсь на связи для правок.",
 
       "contact.chapter.title": "СВЯЗЬ<br>СО МНОЙ",
       "contact.eyebrow": "// КОНТАКТЫ",
@@ -341,6 +396,7 @@
       "nav.skills": "Bacarıqlar",
       "nav.projects": "Layihələrim",
       "nav.projects2": "Layihələr",
+      "nav.process": "Proses",
       "nav.contact": "Əlaqə",
       "role.webdev": "VEB PROQRAMÇI",
       "socials.follow": "MƏNİ İZLƏ",
@@ -387,7 +443,7 @@
       "badge.corefocus": "ƏSAS FOKUS",
       "badge.core": "ƏSAS",
       "badge.growing": "İNKİŞAFDA",
-      "badge.obsession": "EHTIRAS",
+      "badge.obsession": "EHTİRAS",
       "badge.featured": "SEÇİLMİŞ",
 
       "skills.chapter.title": "BACARIQ<br>LARIM",
@@ -442,14 +498,41 @@
       "filter.frontend": "FRONTEND",
       "filter.fullstack": "FULLSTACK",
       "filter.ui": "UI / UX",
-      "projects.screenshot": "SKRİNŞOT",
-      "projects.featured.name": "AD",
-      "projects.featured.desc":
-        "Bu layihənin nə etdiyi və hansı problemi həll etdiyi barədə qısa təsvir.",
-      "projects.card.desc.generic": "Bu layihə haqqında qısa təsvir.",
-      "projects.card.name.generic": "Layihə adı",
       "btn.livedemo": "Canlı Demo",
       "btn.live": "Canlı",
+
+      "proj.starbucks.desc":
+        "Qəhvə brendi üçün isti və adaptiv landing səhifə: menyu, axıcı scroll effektləri və rahat vizual üslub.",
+      "proj.pfc.desc":
+        "IT şirkəti üçün korporativ sayt: xidmətlər, komanda və əlaqə təmiz, müasir dizaynda.",
+      "proj.webdev.desc":
+        "Xidmətləri güclü çağırışla təqdim edən zərif veb inkişaf landing səhifəsi.",
+      "proj.nexora1.desc":
+        "Müstəqil rəqəmsal studiya üçün tünd, kontrastlı sayt: iri tipoqrafiya və animasiya.",
+      "proj.nexora2.desc":
+        "Rəqəmsal agentlik konsepti: xidmətlər, keys bölmələri və konversiyaya yönəlmiş dizayn.",
+      "proj.nexora3.desc":
+        "Nexora studiya brendinin üçüncü variantı: fərqli maket və animasiya yanaşması.",
+      "proj.aero.desc":
+        "Dəqiq UI detalları və kokpit atmosferi olan fütüristik mobil HUD interfeys konsepti.",
+
+      "process.chapter.title": "MƏNİM<br>PROSESİM",
+      "process.eyebrow": "// NECƏ İŞLƏYİRƏM",
+      "process.h2": "Fikirdən <span>buraxılışa.</span>",
+      "process.intro":
+        "Sadə və şəffaf iş axını: həmişə nə baş verdiyini və növbəti addımı bilirsiniz.",
+      "process.s1.title": "Tanışlıq",
+      "process.s1.desc":
+        "Məqsədləri, auditoriyanı və nümunələri müzakirə edirik. Bunu aydın plana çevirirəm.",
+      "process.s2.title": "Dizayn",
+      "process.s2.desc":
+        "Brendinizə uyğun maket, rənglər və şriftlər, hələ bir sətir kod yazılmamışdan əvvəl.",
+      "process.s3.title": "Hazırlanma",
+      "process.s3.desc":
+        "Real ekranlarda və brauzerlərdə yoxlanmış təmiz, adaptiv kod və axıcı animasiyalar.",
+      "process.s4.title": "Buraxılış",
+      "process.s4.desc":
+        "Yerləşdirmə, sürət yoxlaması və təhvil. Düzəlişlər üçün də yanınızdayam.",
 
       "contact.chapter.title": "ƏLAQƏYƏ<br>KEÇ",
       "contact.eyebrow": "// ƏLAQƏ",
@@ -517,7 +600,7 @@
     });
 
     document.documentElement.lang = lang;
-    localStorage.setItem(STORAGE_KEY, lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
     document.querySelectorAll(".lang-switch").forEach((group) => {
       const btns = [...group.querySelectorAll(".lang-switch__btn")];
@@ -537,6 +620,10 @@
     });
   }
 
+  const getSaved = () => {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  };
+
   function initSwitchers() {
     document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
       btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
@@ -545,16 +632,13 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initSwitchers();
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = getSaved();
     applyLanguage(saved && T[saved] ? saved : DEFAULT_LANG);
     // re-align the glide pill after fonts/layout settle
-    setTimeout(
-      () => applyLanguage(localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG),
-      250,
-    );
+    setTimeout(() => applyLanguage(getSaved() || DEFAULT_LANG), 250);
   });
 
   window.addEventListener("resize", () => {
-    applyLanguage(localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG);
+    applyLanguage(getSaved() || DEFAULT_LANG);
   });
 })();
