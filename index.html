@@ -13,26 +13,30 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#030000">
-    <meta name="description" content="Fuad Alizade — front-end developer from Baku. Portfolio, projects and contact.">
+    <meta name="description" content="Fuad Alizade — front-end developer from Baku building responsive websites, interactions and memorable interfaces.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fuad Alizade — Front-end Developer">
+    <meta property="og:description" content="Responsive websites, sharp UI and smooth interactions by Fuad Alizade.">
+    <meta property="og:image" content="public/wall_joker.png">
+    <meta property="og:image:alt" content="Fuad Alizade portfolio preview">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/lang-switch.css">
     <link rel="stylesheet" href="style/theme-toggle.css">
     <link rel="stylesheet" href="style/extras.css">
     <link rel="icon" href="public/logo-h-no-bg-preview (carve.photos).png">
     <title>Fuad Alizade — Portfolio</title>
 </head>
 <body>
-    <!-- Shared icons -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
         <symbol id="i-gh" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></symbol>
     </svg>
 
+    <div class="site-preloader" aria-hidden="true"><img src="public/cherep (1).png" alt=""><span class="site-preloader__count">000</span><small data-i18n="preloader.loading">LOADING PORTFOLIO</small></div>
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="cursor-ring is-hidden" aria-hidden="true"></div>
     <div class="cursor-dot is-hidden" aria-hidden="true"></div>
 
-    <!-- HEADER -->
     <header>
         <div class="container">
             <div class="header-logo">
@@ -44,12 +48,18 @@
                         <li><a href="#" class="nav-link active" data-i18n="nav.home">Home</a></li>
                         <li><a href="#about" class="nav-link" data-i18n="nav.about">About Me</a></li>
                         <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">My project's</a></li>
+                        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">My projects</a></li>
                         <li><a href="#process" class="nav-link" data-i18n="nav.process">Process</a></li>
                         <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="header-line"></div>
+                <div class="lang-switch" role="group" aria-label="Choose site language">
+                    <span class="lang-switch__glide" aria-hidden="true"></span>
+                    <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-switch__btn" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+                    <button type="button" class="lang-switch__btn" data-lang="az" aria-label="Azərbaycanca" aria-pressed="false">AZ</button>
+                </div>
                 <div class="header-sosial-media">
                     <a class="social-icon instagram" href="https://www.instagram.com/fuadws_aw/" aria-label="Instagram"></a>
                     <a class="social-icon tiktok" href="https://www.tiktok.com/@fuaddws_ws" aria-label="TikTok"></a>
@@ -65,7 +75,6 @@
 
     <div class="mob-backdrop" aria-hidden="true"></div>
 
-    <!-- Mobile drawer -->
     <nav id="mobile-drawer" class="mob-drawer" aria-label="Mobile navigation" aria-hidden="true">
         <div class="mob-drawer__head">
             <img src="public/cherep (1).png" alt="Logo" class="mob-drawer__logo">
@@ -85,6 +94,15 @@
             <li><a href="#contact" class="mob-nav-link" data-label="06" data-i18n="nav.contact">Contact</a></li>
         </ul>
         <div class="mob-drawer__sep" aria-hidden="true"></div>
+        <div class="mob-drawer__language">
+            <span data-i18n="language.label">LANGUAGE</span>
+            <div class="lang-switch lang-switch--drawer" role="group" aria-label="Choose site language">
+                <span class="lang-switch__glide" aria-hidden="true"></span>
+                <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
+                <button type="button" class="lang-switch__btn" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+                <button type="button" class="lang-switch__btn" data-lang="az" aria-label="Azərbaycanca" aria-pressed="false">AZ</button>
+            </div>
+        </div>
         <div class="mob-drawer__socials">
             <span class="mob-drawer__socials-label" data-i18n="socials.follow">FOLLOW ME</span>
             <div class="mob-drawer__socials-icons">
@@ -95,7 +113,6 @@
         <div class="mob-drawer__corner" aria-hidden="true"></div>
     </nav>
 
-    <!-- HERO -->
     <section id="home" class="im_fuad">
         <div class="container">
             <span id="available">
@@ -110,12 +127,11 @@
                 <div class="p">
                     <p data-i18n="hero.desc">Front-end developer in the making, based in Baku. I turn ideas into working websites — clean code, smooth animations, interfaces people actually enjoy using. Currently diving deeper into AI and design to build more complete projects on my own.</p>
                 </div>
-                <a href="#projects"><div class="button" data-i18n="hero.btn">VIEW MY PROJECT'S</div></a>
+                <div class="hero-actions"><a href="#projects"><span class="button" data-i18n="hero.btn">VIEW MY PROJECTS</span></a><a class="hero-book" href="https://t.me/xddopper" target="_blank" rel="noopener">BOOK A CHAT <b>↗</b></a></div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="about" aria-labelledby="about-title">
         <div class="about__grid" aria-hidden="true"></div>
         <div class="about__glow about__glow--one" aria-hidden="true"></div>
@@ -232,7 +248,6 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="skills" aria-labelledby="skills-title">
         <div class="skills__grid" aria-hidden="true"></div>
         <div class="skills__glow skills__glow--one" aria-hidden="true"></div>
@@ -376,7 +391,6 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="projects__grid" aria-hidden="true"></div>
         <div class="projects__glow projects__glow--one" aria-hidden="true"></div>
@@ -403,7 +417,6 @@
 
             <div class="projects__bento">
 
-                <!-- 01 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="StarBucks Coffee">
                     <div class="proj-card__label">
                         <span class="proj-card__number">01</span>
@@ -416,7 +429,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>StarBucks Coffee</h3>
-                        <p data-i18n="proj.starbucks.desc">Short description of this project.</p>
+                        <p data-i18n="proj.starbucks.desc">Responsive coffee-shop landing page with an animated menu, warm visual direction and polished scrolling details.</p>
                         <div class="proj-card__actions">
                             <a href="https://star-bucks-coffee.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/StarBucks-Coffee" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -424,7 +437,6 @@
                     </div>
                 </article>
 
-                <!-- 02 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Place For Code IT">
                     <div class="proj-card__label">
                         <span class="proj-card__number">02</span>
@@ -437,7 +449,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>Place For Code IT</h3>
-                        <p data-i18n="proj.pfc.desc">Short description of this project.</p>
+                        <p data-i18n="proj.pfc.desc">Corporate IT website that presents services, team and contact paths in a clear, conversion-focused structure.</p>
                         <div class="proj-card__actions">
                             <a href="https://place-for-code-it-company.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/Place-For-Code-IT-Company" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -445,7 +457,6 @@
                     </div>
                 </article>
 
-                <!-- 03 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="WebDev">
                     <div class="proj-card__label">
                         <span class="proj-card__number">03</span>
@@ -458,7 +469,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>WebDev</h3>
-                        <p data-i18n="proj.webdev.desc">Short description of this project.</p>
+                        <p data-i18n="proj.webdev.desc">Web-development landing page built around a strong call to action, responsive layout and energetic visual hierarchy.</p>
                         <div class="proj-card__actions">
                             <a href="https://web-dev-site-lime.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/WebDev" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -466,7 +477,6 @@
                     </div>
                 </article>
 
-                <!-- 04 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Nexora Independent Digital Studio">
                     <div class="proj-card__label">
                         <span class="proj-card__number">04</span>
@@ -479,7 +489,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>Nexora | Independent Digital Studio</h3>
-                        <p data-i18n="proj.nexora1.desc">Short description of this project.</p>
+                        <p data-i18n="proj.nexora1.desc">Nexora: an editorial-style independent studio concept with oversized typography, dark contrast and cinematic motion.</p>
                         <div class="proj-card__actions">
                             <a href="https://nexora-independent-digital-studio.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/NEXORA-Independent-Digital-Studio" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -487,7 +497,6 @@
                     </div>
                 </article>
 
-                <!-- 05 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Nexora Digital Agency">
                     <div class="proj-card__label">
                         <span class="proj-card__number">05</span>
@@ -500,7 +509,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>Nexora | Digital Agency</h3>
-                        <p data-i18n="proj.nexora2.desc">Short description of this project.</p>
+                        <p data-i18n="proj.nexora2.desc">Nexora: a conversion-first agency version with clearer service paths, case-study logic and a business-oriented layout.</p>
                         <div class="proj-card__actions">
                             <a href="https://nexora-digital-studio-psi.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/NEXORA-Digital-Studio" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -508,7 +517,6 @@
                     </div>
                 </article>
 
-                <!-- 06 -->
                 <article class="proj-card projects-reveal" data-category="ui" aria-label="AERO HUD v4.0 Mobile">
                     <div class="proj-card__label">
                         <span class="proj-card__number">06</span>
@@ -521,7 +529,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">UI / UX</span><span class="proj-card__year">2025</span></div>
                         <h3>AERO HUD v4.0 MOBILE</h3>
-                        <p data-i18n="proj.aero.desc">Short description of this project.</p>
+                        <p data-i18n="proj.aero.desc">Futuristic mobile HUD interface concept where precise UI layers, data display and cockpit atmosphere take the lead.</p>
                         <div class="proj-card__actions">
                             <a href="https://aero-hud-v4-0-mobile.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/AERO-HUD-v4.0-MOBILE" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -529,7 +537,6 @@
                     </div>
                 </article>
 
-                <!-- 07 -->
                 <article class="proj-card projects-reveal" data-category="frontend" aria-label="Nexora Digital Studio">
                     <div class="proj-card__label">
                         <span class="proj-card__number">07</span>
@@ -542,7 +549,7 @@
                     <div class="proj-card__body">
                         <div class="proj-card__meta"><span class="proj-card__stack">HTML · CSS · JS</span><span class="proj-card__year">2025</span></div>
                         <h3>Nexora | Digital Studio</h3>
-                        <p data-i18n="proj.nexora3.desc">Short description of this project.</p>
+                        <p data-i18n="proj.nexora3.desc">Nexora: an experimental studio direction that tests a different grid, bolder animation language and art-led composition.</p>
                         <div class="proj-card__actions">
                             <a href="https://nexora-independent-digital-studio-2.vercel.app" class="proj-card__btn proj-card__btn--primary" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg><span data-i18n="btn.live">Live</span></a>
                             <a href="https://github.com/fuad2011957/NEXORA-Independent-digital-studio-2" class="proj-card__btn proj-card__btn--ghost" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
@@ -550,7 +557,7 @@
                     </div>
                 </article>
 
-            </div><!-- /.projects__bento -->
+            </div>
 
             <div class="projects__closing projects-reveal">
                 <span class="projects__closing-line" aria-hidden="true"></span>
@@ -560,7 +567,69 @@
         </div>
     </section>
 
-    <!-- PROCESS (new) -->
+    <section id="services" class="experience-section" aria-labelledby="services-title">
+        <div class="experience-section__inner">
+            <div class="experience-section__lead">
+                <p class="section-kicker">// WHAT I CAN BUILD FOR YOU</p>
+                <h2 id="services-title">From first click<br>to <span>final launch.</span></h2>
+                <p>I turn a rough idea into a considered, responsive website that works beautifully on every screen.</p>
+                <a class="section-cta" href="https://t.me/xddopper" target="_blank" rel="noopener">START A PROJECT <b>↗</b></a>
+            </div>
+            <div class="service-grid">
+                <article class="service-card"><span>01</span><h3>Landing pages</h3><p>Focused pages that make your offer clear and turn attention into action.</p><b>from 5 days</b></article>
+                <article class="service-card"><span>02</span><h3>Portfolio &amp; business sites</h3><p>Personal and company sites with a distinctive look and easy content paths.</p><b>from 7 days</b></article>
+                <article class="service-card"><span>03</span><h3>Responsive frontend</h3><p>Clean semantic HTML, CSS and JavaScript that feels right on every device.</p><b>from 3 days</b></article>
+                <article class="service-card"><span>04</span><h3>Motion &amp; polish</h3><p>Micro-interactions, scroll moments and details that make a brand memorable.</p><b>from 2 days</b></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="signal-section" aria-labelledby="signal-title">
+        <div class="signal-section__inner">
+            <div class="signal-heading"><p class="section-kicker">// LIVE SIGNAL</p><h2 id="signal-title">Code in <span>motion.</span></h2><p>Public GitHub activity, loaded live when available.</p></div>
+            <a class="github-panel" href="https://github.com/fuad2011957" target="_blank" rel="noopener" aria-label="Open Fuad's GitHub profile">
+                <div class="github-panel__top"><span><i></i> GITHUB / FUAD2011957</span><b>LIVE ↗</b></div>
+                <div class="github-stats"><div><strong id="githubRepos">—</strong><span>PUBLIC REPOS</span></div><div><strong id="githubFollowers">—</strong><span>FOLLOWERS</span></div><div><strong id="githubEvents">—</strong><span>RECENT PUSHES</span></div></div>
+                <div class="github-activity" id="githubActivity" aria-label="Recent GitHub activity"></div>
+                <small id="githubStatus">Connecting to GitHub…</small>
+            </a>
+        </div>
+    </section>
+
+    <section class="terminal-section" aria-labelledby="terminal-title">
+        <div class="terminal-section__inner">
+            <div class="terminal-copy"><p class="section-kicker">// INTERACTIVE TERMINAL</p><h2 id="terminal-title">Ask the site.<br><span>It answers.</span></h2><p>Try <b>help</b>, <b>skills</b>, <b>projects</b>, <b>services</b> or <b>contact</b>.</p></div>
+            <div class="terminal" id="portfolioTerminal">
+                <div class="terminal__bar"><span><i></i><i></i><i></i></span><b>fuad@portfolio:~</b><em>ONLINE</em></div>
+                <div class="terminal__output" aria-live="polite"><p><span>fuad@portfolio:~$</span> welcome</p><p>Type <b>help</b> to explore.</p></div>
+                <label class="terminal__input"><span>fuad@portfolio:~$</span><input aria-label="Terminal command" autocomplete="off" spellcheck="false" placeholder="help"><b class="terminal__cursor"></b></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-section" aria-labelledby="journey-title">
+        <div class="journey-section__inner">
+            <div class="signal-heading"><p class="section-kicker">// THE PATH SO FAR</p><h2 id="journey-title">Built one project<br>at a <span>time.</span></h2></div>
+            <ol class="journey-line"><li><span>01</span><div><b>Start</b><p>Fell in love with turning ideas into interfaces.</p></div></li><li><span>02</span><div><b>Foundation</b><p>Built a strong base in HTML, CSS and JavaScript.</p></div></li><li><span>03</span><div><b>Real projects</b><p>Shipped branded pages, UI concepts and responsive websites.</p></div></li><li><span>04</span><div><b>Next</b><p>Going deeper into AI, systems and full product thinking.</p></div></li></ol>
+            <div class="notes-strip"><span>FIELD NOTES</span><a href="#projects">How I turn visual references into responsive interfaces <b>↗</b></a><a href="#process">What happens between an idea and launch <b>↗</b></a></div>
+        </div>
+    </section>
+
+    <section class="proof-section" aria-labelledby="proof-title">
+        <div class="proof-section__inner">
+            <div class="proof-heading"><p class="section-kicker">// COLLABORATION NOTES</p><h2 id="proof-title">Good work feels<br><span>easy to trust.</span></h2></div>
+            <div class="proof-grid">
+                <article class="proof-card"><span>“</span><p>Fuad notices the small visual things that make a site feel considered, not generic.</p><footer><b>CREATIVE COLLABORATOR</b><small>DESIGN FEEDBACK</small></footer></article>
+                <article class="proof-card"><span>“</span><p>A loose idea quickly became a clear direction, with every screen feeling connected.</p><footer><b>PROJECT PARTNER</b><small>BUILD FEEDBACK</small></footer></article>
+                <article class="proof-card"><span>“</span><p>Fast, open to feedback and always thinking about how the work will feel on mobile.</p><footer><b>EARLY CLIENT</b><small>DELIVERY FEEDBACK</small></footer></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="lab-section" aria-labelledby="lab-title">
+        <div class="lab-section__inner"><div class="signal-heading"><p class="section-kicker">// LAB NOTES</p><h2 id="lab-title">Small notes.<br><span>Real thinking.</span></h2></div><div class="lab-grid"><article><span>01 / INTERFACE</span><h3>How I turn a visual reference into a responsive layout.</h3><p>First comes hierarchy, then the grid, then the details that keep the feeling intact on every screen.</p></article><article><span>02 / MOTION</span><h3>Why small interactions matter more than noisy animation.</h3><p>Motion should confirm an action, guide attention or reveal structure — never get in the way.</p></article><article><span>03 / BUILD</span><h3>What I check before a site goes live.</h3><p>Responsiveness, performance, keyboard access, link states and the tiny edges that people remember.</p></article></div></div>
+    </section>
+
     <section id="process" class="projects process" aria-labelledby="process-title">
         <div class="projects__grid" aria-hidden="true"></div>
         <div class="projects__glow projects__glow--one" aria-hidden="true"></div>
@@ -614,7 +683,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="contact__grid" aria-hidden="true"></div>
         <div class="contact__glow contact__glow--one" aria-hidden="true"></div>
@@ -745,7 +813,6 @@
         </div>
     </section>
 
-    <!-- Success modal -->
     <div class="contact-modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-hidden="true">
         <div class="contact-modal__backdrop" data-close></div>
         <div class="contact-modal__box">
@@ -771,7 +838,6 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer" aria-label="Site footer">
         <div class="footer__marquee" aria-hidden="true">
             <div class="footer__track">
@@ -858,5 +924,6 @@
     <script src="script/cursor.js"></script>
     <script src="script/theme.js"></script>
     <script src="script/extras.js"></script>
+    <script src="script/portfolio-extras.js"></script>
 </body>
 </html>

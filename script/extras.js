@@ -5,7 +5,6 @@
   const line = sec && sec.querySelector('.process__line');
   const steps = sec ? [...sec.querySelectorAll('.process-step')] : [];
 
-  /* Scroll progress bar + process timeline */
   const onScroll = () => {
     const max = root.scrollHeight - innerHeight;
     if (bar) bar.style.setProperty('--p', max > 0 ? Math.min(scrollY / max, 1) : 0);
@@ -22,7 +21,6 @@
   addEventListener('resize', onScroll);
   onScroll();
 
-  /* Count-up numbers in About cards */
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.about-card__stat').forEach((el) => {
       const m = el.textContent.trim().match(/^(\d+)(.*)$/);
@@ -44,7 +42,6 @@
     });
   }
 
-  /* Magnetic buttons */
   if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.querySelectorAll('.im_fuad_content .button, .about__btn, .contact-form__submit, .footer__mail').forEach((b) => {
       b.addEventListener('pointermove', (e) => {

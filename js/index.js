@@ -9,7 +9,6 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('is-floating', window.scrollY > SCROLL_THRESHOLD);
 }, { passive: true });
 
-/* ---------- Active nav link ---------- */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -27,7 +26,6 @@ const observer = new IntersectionObserver((entries) => {
 if (heroSection) observer.observe(heroSection);
 sections.forEach((section) => observer.observe(section));
 
-/* ---------- Reveal + mouse glow on cards ---------- */
 const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
     const section = document.querySelector(sectionSelector);
     if (!section) return;
@@ -71,9 +69,6 @@ const setupInteractiveSection = (sectionSelector, cardSelector, readyClass) => {
 setupInteractiveSection('.skills', '.skill-card', 'skills--ready');
 setupInteractiveSection('.about', '.about-card, .about__profile-card', 'about--ready');
 
-/* ==========================================
-   MOBILE BURGER MENU
-   ========================================== */
 const burger      = document.querySelector('.burger');
 const mobDrawer   = document.querySelector('.mob-drawer');
 const mobBackdrop = document.querySelector('.mob-backdrop');
@@ -120,19 +115,9 @@ document.addEventListener('keydown', (e) => {
 
 setupInteractiveSection('.contact', '.contact-card', 'contact--ready');
 
-/* ==========================================
-   CONTACT FORM
-   ========================================== */
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    /*
-     * ПОЧТА: чтобы сообщения приходили на твою почту:
-     * 1) зайди на https://formspree.io, создай форму (New Form) и укажи свою почту;
-     * 2) подтверди письмо от Formspree;
-     * 3) вставь сюда ссылку вида 'https://formspree.io/f/xxxxxxxx'.
-     * Пока пусто — отправка только имитируется, реальные письма НЕ уходят.
-     */
     const CONTACT_ENDPOINT = 'https://formspree.io/f/xwlvwpop';
 
     const modal      = document.getElementById('contactModal');
@@ -175,7 +160,6 @@ if (contactForm) {
         counter.textContent = e.target.value.length;
     });
 
-    /* ---- Modal ---- */
     let lastFocused = null;
 
     const openModal = (name) => {
@@ -206,7 +190,6 @@ if (contactForm) {
         }
     });
 
-    /* ---- Send ---- */
     const sendMessage = async (data) => {
         if (!CONTACT_ENDPOINT) {
             await new Promise((resolve) => setTimeout(resolve, 1400)); // имитация
@@ -233,7 +216,6 @@ if (contactForm) {
             return;
         }
 
-        // Honeypot: боты заполняют скрытое поле
         if (contactForm.elements._gotcha.value) {
             openModal(contactForm.elements.name.value.trim());
             contactForm.reset();
@@ -272,9 +254,6 @@ if (contactForm) {
 
 setupInteractiveSection('.footer', '.footer__brand', 'footer--ready');
 
-/* ==========================================
-   FOOTER
-   ========================================== */
 const footerYear = document.getElementById('footerYear');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
 
@@ -285,9 +264,6 @@ if (backToTop) {
     });
 }
 
-/* ==========================================
-   PROJECTS FILTER
-   ========================================== */
 const projFilterBtns = document.querySelectorAll('.proj-filter');
 const projCards = document.querySelectorAll('.projects__bento .proj-card');
 

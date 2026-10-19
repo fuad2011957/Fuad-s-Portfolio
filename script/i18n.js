@@ -9,7 +9,7 @@
       "nav.about": "About Me",
       "nav.about2": "About",
       "nav.skills": "Skills",
-      "nav.projects": "My project's",
+      "nav.projects": "My projects",
       "nav.projects2": "Projects",
       "nav.process": "Process",
       "nav.contact": "Contact",
@@ -22,7 +22,7 @@
       "hero.role.title": "WEB DEVELOPER",
       "hero.desc":
         "Front-end developer in the making, based in Baku. I turn ideas into working websites — clean code, smooth animations, interfaces people actually enjoy using. Currently diving deeper into AI and design to build more complete projects on my own.",
-      "hero.btn": "VIEW MY PROJECT'S",
+      "hero.btn": "VIEW MY PROJECTS",
 
       "status.online": "ONLINE",
       "loc.baku": "BAKU, AZERBAIJAN",
@@ -604,9 +604,11 @@
 
     document.querySelectorAll(".lang-switch").forEach((group) => {
       const btns = [...group.querySelectorAll(".lang-switch__btn")];
-      btns.forEach((b) =>
-        b.classList.toggle("is-active", b.dataset.lang === lang),
-      );
+      btns.forEach((b) => {
+        const isActive = b.dataset.lang === lang;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-pressed", String(isActive));
+      });
       const active = btns.find((b) => b.dataset.lang === lang);
       const glide = group.querySelector(".lang-switch__glide");
       if (active && glide) {
